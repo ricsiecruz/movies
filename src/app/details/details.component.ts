@@ -34,4 +34,13 @@ export class DetailsComponent {
       console.log('details', res, this.data.trailer, this.data.genre)
     })
   }
+
+  formatGenres(genre: string[] | undefined): string {
+    if (!genre || genre.length === 0) {
+      return '';
+    }
+  
+    return genre.join(', ');
+  }
+  
 }

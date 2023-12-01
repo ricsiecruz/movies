@@ -9,9 +9,11 @@
       >
     </iframe>
 
-    <div class="details_title">{{ data.title }}</div>
-    <div class="details_date">{{ data.release_date }}</div>
-    <div>{{ data.genre }}</div>
-    <div>{{ data.duration }}</div>
-    <div>{{ data.description }}</div>
+    <div class="details_content">
+      <div class="details_content_title">{{ data.title }}</div>
+      <div class="details_content_date">{{ data.release_date }}</div>
+      <div>{{ formatGenres(data.genre) }}</div>
+      <div class="details_content_duration">{{ data.duration }}</div>
+      <div class="details_content_desc">{{ data.description }}</div>
+    </div>
 </div>

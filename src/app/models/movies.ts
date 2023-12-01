@@ -7,6 +7,7 @@ export class Movies {
     genre?: Genre[];
     release_date?: string;
     trailer?: string;
+    watchlist?: boolean;
 }
 
 interface Genre{}

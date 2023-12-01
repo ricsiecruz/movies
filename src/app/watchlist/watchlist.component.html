@@ -1,1 +1,19 @@
-<p>watchlist works!</p>
+<div class="landing">
+    <ng-container *ngIf="hasWatchlistItems(); else nodata">
+        <div *ngFor="let item of data" class="landing_list">
+            <div *ngIf="item.watchlist">
+                <div [routerLink]="['/movie-details', item.id]">
+                    <div class="landing_list_img"><img [src]="item.img" ></div>
+                    <div class="landing_list_title">{{ item.title }}</div>
+                    <div class="landing_list_date">{{ item.release_date }}</div>
+                </div>
+                <div (click)="remove(item)" class="landing_list_remove">
+                    Remove from Watchlist
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #nodata>
+        <div style="color: #FFFFFF;">No Data</div>
+    </ng-template>
+</div>

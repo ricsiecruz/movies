@@ -19,4 +19,8 @@ export class AppService {
   getMovieDetails(id:number) {
     return this.http.get<Movies>(this.API_URL + `/movies/${id}`)
   }
+
+  watchlist(item: any) {
+    return this.http.put(this.API_URL + `/movies/${item.id}`, item)
+  }
 }

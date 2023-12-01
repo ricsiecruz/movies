@@ -3,6 +3,15 @@
 
     &_list {
 
+        &_watchlist {
+            position: absolute;
+            background: #ff428d;
+            color: #FFFFFF;
+            padding: 5px 10px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 1px 1px 1px 1px #bb1b1b;
+        }
+
         &_img {
             height: 415px;
         }
@@ -15,6 +24,27 @@
 
         &_date {
             color: #ff428d;
+            padding-bottom: 10px;
+        }
+
+        &_add {
+            background-color: #ff428d;
+            text-align: center;
+            color: #FFFFFF;
+            width: 230px;
+            text-transform: uppercase;
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+
+        &_remove {
+            background-color: #ff2e3d;
+            text-align: center;
+            color: #FFFFFF;
+            width: 230px;
+            text-transform: uppercase;
+            padding: 10px 0;
+            border-radius: 5px;
         }
     }
 }

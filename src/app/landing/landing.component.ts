@@ -15,7 +15,23 @@ export class LandingComponent {
   ngOnInit() {
     this.app.getMovies().subscribe(res => {
       this.data = res;
-      console.log('res', res)
     })
   }
+  
+  add(item: any) {
+    item.watchlist = !item.watchlist;
+
+    this.app.watchlist(item).subscribe(response => {
+      console.log('Updated successfully', response);
+    });
+  }
+  
+  remove(item: any) {
+    item.watchlist = false;
+  
+    this.app.watchlist(item).subscribe(response => {
+      console.log('Updated successfully', response);
+    });
+  }
+  
 }
