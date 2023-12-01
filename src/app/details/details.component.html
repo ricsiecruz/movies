@@ -10,6 +10,27 @@
     </iframe>
 
     <div class="details_content">
+      <div class="details_content_poster">
+        <div class="details_content_poster_image">
+          <div *ngIf="data.watchlist" class="details_content_poster_image_watchlist">
+            Added to Watchlist
+          </div>
+          <div class="landing_content_img"><img src={{data.img}} ></div>
+        </div>
+        <div>
+          <div *ngIf="data.watchlist; else watchlist" (click)="remove(data)" class="details_content_poster_watchlist">
+            Remove from Watchlist
+          </div>
+        </div>
+        <ng-template #watchlist>
+          <div class="landing_movies_list_add" (click)="add(data)">
+            Add to Watchlist
+          </div>
+        </ng-template>
+      </div>
+
+
+
       <div class="details_content_title">{{ data.title }}</div>
       <div class="details_content_date">{{ data.release_date }}</div>
       <div>{{ formatGenres(data.genre) }}</div>

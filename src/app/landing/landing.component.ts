@@ -34,4 +34,17 @@ export class LandingComponent {
     });
   }
   
+  sortByTitle() {
+    if (this.data) {
+      this.data.sort((a: any, b: any) => a.title.localeCompare(b.title));
+    }
+  }
+
+  sortByDate() {
+    if (this.data) {
+      this.data.sort((a: any, b: any) => {
+        return new Date(a.release_date).getTime() - new Date(b.release_date).getTime();
+      });
+    }
+  }
 }

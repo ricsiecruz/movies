@@ -1,20 +1,27 @@
 <div class="landing">
-    <div *ngFor="let item of data" class="landing_list"> 
-        <div *ngIf="item.watchlist" class="landing_list_watchlist">
-            Added to Watchlist
-        </div>
-        <div [routerLink]="['/movie-details', item.id]">
-            <div class="landing_list_img"><img src={{item.img}} ></div>
-            <div class="landing_list_title">{{ item.title }}</div>
-            <div class="landing_list_date">{{ item.release_date }}</div>
-        </div>
-        <div *ngIf="item.watchlist; else watchlist" (click)="remove(item)" class="landing_list_remove">
-            Remove from Watchlist
-        </div>
-        <ng-template #watchlist>
-            <div class="landing_list_add" (click)="add(item)">
-                Add to Watchlist
+    <div class="landing_sort">
+
+        <div (click)="sortByTitle()">Sort by Title</div>
+        <div (click)="sortByDate()">Sort by Date</div>
+    </div>
+    <div class="landing_movies">
+        <div *ngFor="let item of data" class="landing_movies_list"> 
+            <div *ngIf="item.watchlist" class="landing_movies_list_watchlist">
+                Added to Watchlist
             </div>
-        </ng-template>
+            <div [routerLink]="['/movie-details', item.id]">
+                <div class="landing_movies_list_img"><img src={{item.img}} ></div>
+                <div class="landing_movies_list_title">{{ item.title }}</div>
+                <div class="landing_movies_list_date">{{ item.release_date }}</div>
+            </div>
+            <div *ngIf="item.watchlist; else watchlist" (click)="remove(item)" class="landing_movies_list_remove">
+                Remove from Watchlist
+            </div>
+            <ng-template #watchlist>
+                <div class="landing_movies_list_add" (click)="add(item)">
+                    Add to Watchlist
+                </div>
+            </ng-template>
+        </div>
     </div>
 </div>
