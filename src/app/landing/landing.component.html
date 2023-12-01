@@ -1,0 +1,7 @@
+<div class="landing">
+    <div *ngFor="let item of data" class="landing_list" [routerLink]="['/movie-details', item.id]"> 
+        <div class="landing_list_img"><img src={{item.img}} ></div>
+        <div class="landing_list_title">{{ item.title }}</div>
+        <div class="landing_list_date">{{ item.release_date }}</div>
+    </div>
+</div>
