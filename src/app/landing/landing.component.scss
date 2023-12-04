@@ -1,3 +1,13 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+}
+
 .landing {
 
     &_sort {
@@ -10,12 +20,34 @@
         div {
             width: 120px;
         }
+
+        div:hover {
+            cursor: pointer;
+        }
     }
 
     &_movies {
         column-count: 5;
 
+        @include respond-to(sm) {
+            // Styles for small screens (up to 600.02px)
+            column-count: 1 !important;
+        }
+
+        @include respond-to(xl) {
+            column-count: 3;
+        }
+
         &_list {
+
+            @include respond-to(sm) {
+                padding-bottom: 30px;
+            }
+
+            @include respond-to(xl) {
+                display: inline-block;
+                width: 100%;
+            }
 
             &_watchlist {
                 position: absolute;
@@ -28,6 +60,10 @@
 
             &_img {
                 height: 415px;
+
+                @include respond-to(sm) {
+                    height: 455px;
+                }
             }
 
             &_title {
@@ -41,6 +77,11 @@
                 padding-bottom: 10px;
             }
 
+            &_rating {
+                display: flex;
+                justify-content: space-between;
+            }
+
             &_add {
                 background-color: #ff428d;
                 text-align: center;
@@ -49,6 +90,11 @@
                 text-transform: uppercase;
                 padding: 10px 0;
                 border-radius: 5px;
+            }
+
+            &_add:hover {
+                background-color: #d34980;
+                cursor: pointer;
             }
 
             &_remove {
@@ -60,6 +106,11 @@
                 padding: 10px 0;
                 border-radius: 5px;
             }
+
+            &_remove:hover {
+                background-color: #da3742;
+                cursor: pointer;
+            }
         }
 }
 }
@@ -67,4 +118,8 @@
 .landing img {
     width: 100%;
     height: 415px;
+
+    @include respond-to(sm) {
+        height: 455px;
+    }
 }

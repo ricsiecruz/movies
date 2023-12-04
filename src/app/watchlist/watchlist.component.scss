@@ -1,8 +1,31 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+}
+
 .landing {
     column-count: 5;
 
+    @include respond-to(sm) {
+        column-count: 1;
+    }
+
     &_list {
         display: inline-block;
+
+        @include respond-to(sm) {
+            padding-bottom: 30px;
+        }
+        
+        @include respond-to(xl) {
+            display: inline-block;
+            width: 100%;
+        }
 
         &_watchlist {
             position: absolute;
@@ -15,6 +38,10 @@
 
         &_img {
             height: 415px;
+            
+            @include respond-to(sm) {
+                height: 455px;
+            }
         }
 
         &_title {
@@ -47,10 +74,19 @@
             padding: 10px 0;
             border-radius: 5px;
         }
+
+        &_remove:hover {
+            background-color: #da3742;
+            cursor: pointer;
+        }
     }
 }
 
 .landing img {
     width: 100%;
     height: 415px;
+    
+    @include respond-to(sm) {
+        height: 455px;
+    }
 }

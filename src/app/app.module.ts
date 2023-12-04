@@ -9,6 +9,7 @@ import { LandingComponent } from './landing/landing.component';
 import { DetailsComponent } from './details/details.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SafeUrlPipe } from './safe-url.pipe';
     LandingComponent,
     DetailsComponent,
     WatchlistComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

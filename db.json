@@ -11,8 +11,9 @@
         "Sci-Fi"
       ],
       "release_date": "3 September 2020",
-      "trailer": "LdOM0x0XDMo",
-      "watchlist": false
+      "trailer": "https://www.youtube.com/embed/LdOM0x0XDMo",
+      "watchlist": true,
+      "rating": "7.8"
     },
     {
       "id": 2,
@@ -27,7 +28,8 @@
       ],
       "release_date": "14 December 2018",
       "trailer": "tg52up16eq0",
-      "watchlist": false
+      "watchlist": false,
+      "rating": "8.4"
     },
     {
       "id": 3,
@@ -42,7 +44,8 @@
       ],
       "release_date": "27 November 2019",
       "trailer": "https://www.youtube.com/embed/https://www.youtube.com/embed/qGqiHJTsRkQ",
-      "watchlist": true
+      "watchlist": false,
+      "rating": ""
     },
     {
       "id": 4,
@@ -56,8 +59,9 @@
         "Adventure"
       ],
       "release_date": "1 August 2014",
-      "trailer": "d96cjJhvlMA",
-      "watchlist": false
+      "trailer": "https://www.youtube.com/embed/https://www.youtube.com/embed/d96cjJhvlMA",
+      "watchlist": false,
+      "rating": "8.0"
     },
     {
       "id": 5,
@@ -72,7 +76,8 @@
       ],
       "release_date": "1 May 2015",
       "trailer": "tmeOjFno6Do",
-      "watchlist": false
+      "watchlist": false,
+      "rating": "7.3"
     }
   ]
 }

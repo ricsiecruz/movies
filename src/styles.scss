@@ -8,3 +8,20 @@ body {
 .active {
     border-bottom: 2px solid #ff428d;
 }
+
+$angular-flex--sm: 600.02px;
+$angular-flex--md: 959.02px;
+$angular-flex--lg: 1279.02px;
+$angular-flex--xl: 1920.02px;
+
+$grid-breakpoints: (xs: 0,
+    sm: $angular-flex--sm,
+    md: $angular-flex--md,
+    lg: $angular-flex--lg,
+    xl: $angular-flex--xl);
+
+$container-max-widths: (
+    sm: $angular-flex--sm,
+    md: $angular-flex--md,
+    lg: $angular-flex--lg,
+    xl: $angular-flex--xl);

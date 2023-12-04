@@ -12,6 +12,11 @@
             <div [routerLink]="['/movie-details', item.id]">
                 <div class="landing_movies_list_img"><img src={{item.img}} ></div>
                 <div class="landing_movies_list_title">{{ item.title }}</div>
+                
+                <div class="landing_movies_list_rating">
+                    <app-rating [rating]="item.rating" [maxRating]="10"></app-rating>
+                    <div class="landing_movies_list_title">{{ item.rating }}</div>
+                </div>
                 <div class="landing_movies_list_date">{{ item.release_date }}</div>
             </div>
             <div *ngIf="item.watchlist; else watchlist" (click)="remove(item)" class="landing_movies_list_remove">

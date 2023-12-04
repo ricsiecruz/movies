@@ -1,15 +1,37 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+}
+
 .details {
     color: #FFFFFF;
     display: flex;
+
+    @include respond-to(sm) {
+        display: block;
+    }
 
     &_content {
         padding: 0 20px;
 
         &_poster {
             display: flex;
+
+            @include respond-to(sm) {
+                display: block;
+            }
             
             &_image {
                 width: 230px;
+
+                @include respond-to(sm) {
+                    width: 100%;
+                }
 
                 &_watchlist {
                     position: absolute;
@@ -21,7 +43,7 @@
                 }
             }
 
-            &_watchlist {
+            &_remove {
                 background-color: #ff2e3d;
                 text-align: center;
                 color: #FFFFFF;
@@ -30,6 +52,25 @@
                 padding: 10px 0;
                 border-radius: 5px;
                 margin-left: 20px;
+
+                @include respond-to(sm) {
+                    margin: 20px 0;
+                }
+            }
+
+            &_add {
+                background-color: #ff428d;
+                text-align: center;
+                color: #FFFFFF;
+                width: 230px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                border-radius: 5px;
+                margin-left: 20px;
+
+                @include respond-to(sm) {
+                    margin: 20px 0;
+                }
             }
         }
 
@@ -41,6 +82,15 @@
 
         img {
             width: 100%;
+        }
+
+        &_rating {
+            display: flex;
+            align-items: center;
+
+            div {
+                padding-left: 10px;
+            }
         }
     
         &_date {
@@ -60,4 +110,8 @@
 .details iframe {
     width: 100%;
     height: 500px;
+
+    @include respond-to(sm) {
+        height: 100%;
+    }
 }
