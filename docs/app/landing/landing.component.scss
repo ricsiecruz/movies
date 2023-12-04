@@ -1,0 +1,125 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+@mixin respond-to($breakpoint) {
+    @media (max-width: map-get($grid-breakpoints, $breakpoint)) {
+      @content;
+    }
+}
+
+.landing {
+
+    &_sort {
+        color: #ff428d;
+        display: flex;
+        justify-content: right;
+        text-align: right;
+        padding-bottom: 10px;
+        
+        div {
+            width: 120px;
+        }
+
+        div:hover {
+            cursor: pointer;
+        }
+    }
+
+    &_movies {
+        column-count: 5;
+
+        @include respond-to(sm) {
+            // Styles for small screens (up to 600.02px)
+            column-count: 1 !important;
+        }
+
+        @include respond-to(xl) {
+            column-count: 3;
+        }
+
+        &_list {
+
+            @include respond-to(sm) {
+                padding-bottom: 30px;
+            }
+
+            @include respond-to(xl) {
+                display: inline-block;
+                width: 100%;
+            }
+
+            &_watchlist {
+                position: absolute;
+                background: #ff428d;
+                color: #FFFFFF;
+                padding: 5px 10px;
+                border-bottom-right-radius: 5px;
+                box-shadow: 1px 1px 1px 1px #bb1b1b;
+            }
+
+            &_img {
+                height: 415px;
+
+                @include respond-to(sm) {
+                    height: 455px;
+                }
+            }
+
+            &_title {
+                color: #FFFFFF;
+                padding: 5px 0;
+                padding-top: 10px;
+            }
+
+            &_date {
+                color: #ff428d;
+                padding-bottom: 10px;
+            }
+
+            &_rating {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &_add {
+                background-color: #ff428d;
+                text-align: center;
+                color: #FFFFFF;
+                width: 230px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                border-radius: 5px;
+            }
+
+            &_add:hover {
+                background-color: #d34980;
+                cursor: pointer;
+            }
+
+            &_remove {
+                background-color: #ff2e3d;
+                text-align: center;
+                color: #FFFFFF;
+                width: 230px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                border-radius: 5px;
+            }
+
+            &_remove:hover {
+                background-color: #da3742;
+                cursor: pointer;
+            }
+        }
+}
+}
+
+.landing img {
+    width: 100%;
+    height: 415px;
+
+    @include respond-to(sm) {
+        height: 455px;
+    }
+}

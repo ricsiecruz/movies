@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #1a1a1a;
+    font-family: 'Roboto';
+    padding: 20px;
+}
+
+.active {
+    border-bottom: 2px solid #ff428d;
+}
+
+$angular-flex--sm: 600.02px;
+$angular-flex--md: 959.02px;
+$angular-flex--lg: 1279.02px;
+$angular-flex--xl: 1920.02px;
+
+$grid-breakpoints: (xs: 0,
+    sm: $angular-flex--sm,
+    md: $angular-flex--md,
+    lg: $angular-flex--lg,
+    xl: $angular-flex--xl);
+
+$container-max-widths: (
+    sm: $angular-flex--sm,
+    md: $angular-flex--md,
+    lg: $angular-flex--lg,
+    xl: $angular-flex--xl);
