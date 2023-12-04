@@ -1,0 +1,44 @@
+<div class="details">
+
+    <iframe 
+      [src]="safeUrl" 
+      frameborder="0" 
+      webkitallowfullscreen
+      mozallowfullscreen 
+      allowfullscreen
+      >
+    </iframe>
+
+    <div class="details_content">
+      <div class="details_content_poster">
+        <div class="details_content_poster_image">
+          <div *ngIf="data.watchlist" class="details_content_poster_image_watchlist">
+            Added to Watchlist
+          </div>
+          <div class="landing_content_img"><img src={{data.img}} ></div>
+        </div>
+        <div>
+          <div *ngIf="data.watchlist; else watchlist" (click)="remove(data)" class="details_content_poster_remove">
+            Remove from Watchlist
+          </div>
+        </div>
+        <ng-template #watchlist>
+          <div class="details_content_poster_add" (click)="add(data)">
+            Add to Watchlist
+          </div>
+        </ng-template>
+      </div>
+
+
+
+      <div class="details_content_title">{{ data.title }}</div>
+      <div class="details_content_rating">
+        <app-rating [rating]="data.rating" [maxRating]="10"></app-rating>
+        <div class="landing_movies_list_title">{{ data.rating }}</div>
+      </div>
+      <div class="details_content_date">{{ data.release_date }}</div>
+      <div>{{ formatGenres(data.genre) }}</div>
+      <div class="details_content_duration">{{ data.duration }}</div>
+      <div class="details_content_desc">{{ data.description }}</div>
+    </div>
+</div>
